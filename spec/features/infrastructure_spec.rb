@@ -13,6 +13,7 @@ feature 'bookmarks' do
 
   scenario 'it shows a list of current bookmarks' do
     visit '/bookmarks'
-    expect(page).to have_content "bookmark1, bookmark2"
+    expect(page).to have_content "bookmark1"
+    expect(page).to have_content "bookmark2"
   end
 end

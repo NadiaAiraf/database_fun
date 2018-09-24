@@ -1,2 +1,6 @@
 <h1>List of bookmarks</h1>
-<p><%= session[:bookmark].all %></p>
+<ul>
+  <% session[:bookmark].all.each do |bookmark| %>
+  <li><%= bookmark %></li>
+  <% end %>
+</ul>

@@ -5,6 +5,6 @@ class Bookmark
   end
 
   def all
-    bookmarks.join(", ")
+    bookmarks
   end
 end
