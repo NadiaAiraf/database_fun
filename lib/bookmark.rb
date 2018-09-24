@@ -7,7 +7,11 @@ class Bookmark
   end
 
   def all
-    conn = PG.connect :dbname => 'bookmark_manager'
-    @rs = conn.exec("SELECT * FROM bookmarks").map{|x| x['url']}
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'bookmark_manager_test')
+    else
+      connection = PG.connect(dbname: 'bookmark_manager')
+    end
+    connection.exec("SELECT * FROM bookmarks").map{|x| x['url']}
   end
 end

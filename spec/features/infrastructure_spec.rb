@@ -13,7 +13,9 @@ feature 'bookmarks' do
 
   scenario 'it shows a list of current bookmarks' do
     visit '/bookmarks'
-    expect(page).to have_content "hello"
-    expect(page).to have_content "http://www.twitter.com"
+    expect(page).to have_content "aidan"
+    expect(page).to have_content "makers"
+    expect(page).to have_content "academy"
+    expect(page).to have_content "tom"
   end
 end
