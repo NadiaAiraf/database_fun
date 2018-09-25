@@ -1,6 +1,6 @@
 <h1>List of bookmarks</h1>
 <ul>
   <% @bookmark.all.each do |bookmark| %>
-  <li><%= bookmark[:url] %><form method="post" action="/delete"><input type="submit" name="<%= bookmark[:id] %>" value="delete"></form></li>
+  <li><%= bookmark[:url] %><form method="post" action="/delete"><input id="<%= bookmark[:id] %>" type="submit" name="<%= bookmark[:id] %>" value="delete"></form></li>
   <% end %>
 </ul>

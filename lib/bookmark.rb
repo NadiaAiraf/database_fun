@@ -19,7 +19,12 @@ class Bookmark
   end
 
   def add_bookmark(url)
-    connect.exec("insert into bookmarks (url) values ('#{url}')")
+    connect.exec("insert into bookmarks (url) values ('#{url}');")
+  end
+
+  def delete_bookmark(id)
+    p id
+    connect.exec("delete from bookmarks where id = #{id.to_i};")
   end
 
   def connect
