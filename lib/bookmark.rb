@@ -3,7 +3,14 @@ require 'pg'
 class Bookmark
   attr_reader :bookmarks
   def initialize
-    @bookmarks = ['bookmark1','bookmark2']
+  end
+
+  def self.create
+    @@bookmark = Bookmark.new
+  end
+
+  def self.instance
+    @@bookmark
   end
 
   def all
