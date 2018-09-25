@@ -1,4 +1,5 @@
 require 'pg'
+require 'uri'
 
 class Bookmark
   attr_reader :bookmarks
@@ -28,6 +29,10 @@ class Bookmark
 
   def update_bookmark(id, url)
     connect.exec("update bookmarks set url = '#{url}' where id = #{id}")
+  end
+
+  def check_url(url)
+    !!(url =~ URI::regexp)
   end
 
   def connect
