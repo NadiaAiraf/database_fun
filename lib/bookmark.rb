@@ -23,7 +23,6 @@ class Bookmark
   end
 
   def delete_bookmark(id)
-    p id
     connect.exec("delete from bookmarks where id = #{id.to_i};")
   end
 
