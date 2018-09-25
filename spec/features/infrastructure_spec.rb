@@ -12,6 +12,8 @@ feature 'bookmarks' do
   end
 
   scenario 'it shows a list of current bookmarks' do
+    empty_database
+    add_bookmarks
     visit '/bookmarks'
     expect(page).to have_content "aidan"
     expect(page).to have_content "makers"

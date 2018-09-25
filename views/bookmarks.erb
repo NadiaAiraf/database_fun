@@ -1,6 +1,6 @@
 <h1>List of bookmarks</h1>
 <ul>
-  <% session[:bookmark].all.each do |bookmark| %>
+  <% @bookmark.each do |bookmark| %>
   <li><%= bookmark %></li>
   <% end %>
 </ul>
