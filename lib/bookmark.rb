@@ -15,7 +15,7 @@ class Bookmark
   end
 
   def all
-    connect.exec("SELECT * FROM bookmarks").map{|x| { id: x['id'], url: x['url']}}
+    connect.exec("SELECT id, url FROM bookmarks order by id").map{|x| { id: x['id'], url: x['url']}}
   end
 
   def add_bookmark(url)
@@ -24,6 +24,10 @@ class Bookmark
 
   def delete_bookmark(id)
     connect.exec("delete from bookmarks where id = #{id.to_i};")
+  end
+
+  def update_bookmark(id, url)
+    connect.exec("update bookmarks set url = '#{url}' where id = #{id}")
   end
 
   def connect
