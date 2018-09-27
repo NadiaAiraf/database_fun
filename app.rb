@@ -22,8 +22,9 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/bookmark' do
+    p params
     if Bookmark.new.check_url(params['url'])
-      Bookmark.new.add_bookmark(params[:url])
+      Bookmark.new.add_bookmark(params[:url], params[:title])
       redirect '/bookmarks'
     else
       flash[:notice] = "You must submit a valid URL, dumbass"
@@ -42,7 +43,13 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/update' do
-    Bookmark.new.update_bookmark(session[:update], params[:url])
+    if Bookmark.new.check_url(params['url'])
+      Bookmark.new.update_bookmark(session[:update], params[:url],params[:title])
+      redirect '/bookmarks'
+    else
+      flash[:notice] = "You must submit a valid URL, dumbass"
+      redirect '/update'
+    end
     redirect '/bookmarks'
   end
 

@@ -15,9 +15,9 @@ feature 'bookmarks' do
     empty_database
     add_bookmarks
     visit '/bookmarks'
-    expect(page).to have_content "aidan"
-    expect(page).to have_content "makers"
-    expect(page).to have_content "academy"
-    expect(page).to have_content "tom"
+    expect(page).to have_content "google"
+    expect(page).to have_content 'facebook'
+    expect(page).to have_content 'twitter'
+    expect(page).to have_content 'youtube'
   end
 end

@@ -1,4 +1,6 @@
 <form class="" action="update" method="post">
-  <input type="text" name="url" required>
+  <input type="text" name="url" required placeholder="enter your new url">
+  <input type="text" name="title" required placeholder="enter your new title">
   <input type="submit" name="submit" value="Submit">
 </form>
+<%= flash[:notice] %>
