@@ -2,9 +2,10 @@ source 'https://rubygems.org'
 
 ruby '2.5.1'
 
+gem 'pg'
 gem 'rake'
 gem 'sinatra'
-gem 'pg'
+gem 'sinatra-flash'
 
 
 group :test do
