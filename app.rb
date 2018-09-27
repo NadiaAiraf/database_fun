@@ -53,5 +53,9 @@ class BookmarkManager < Sinatra::Base
     redirect '/bookmarks'
   end
 
+  get '/comments' do
+    erb :comments
+  end
+
   run! if app_file == $0
 end

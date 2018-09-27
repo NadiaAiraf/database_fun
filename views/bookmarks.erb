@@ -9,5 +9,8 @@
     <form method="get" action="/update">
       <input id="<%= bookmark[:id] %>_edit" type="submit" name="<%= bookmark[:id] %>" value="update">
     </form>
+    <form method="get" action="/comments">
+      <input id="<%= bookmark[:id] %>_update" type="submit" name="<%= bookmark[:id] %>" value="update">
+    </form>
   <% end %>
 </ul>
