@@ -4,7 +4,8 @@ feature 'adding and viewing comments' do
       visit '/bookmarks'
       find('#1_comment').click
       fill_in 'text',with: 'google is freaking awesome'
-      expect(page).to have_content 'google is freaking awesome' 
+      click_button 'submit'
+      expect(page).to have_content 'google is freaking awesome'
     end
   end
 end
